@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndexedDB Examples</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <main>
+        <section class="form-container">
+            <header class="header">Create Database</header>
+            <div>
+                <div class="input-container">
+                    <label for="databaseName">Database Name</label>
+                    <input
+                        type="text"
+                        placeholder="Database Name"
+                        name="databaseName"
+                        id="databaseName"
+                        value=""
+                    />
+                </div>
+                <div class="input-container">
+                    <label for="databaseVersion">Database Version</label>
+                    <input
+                        type="number"
+                        placeholder="Database Version"
+                        name="databaseVersion"
+                        id="databaseVersion"
+                        value=""
+                    />
+                </div>
+                <div>
+                    <button class="btn create-db-btn" onclick="createDb()">Create DB</button>
+                </div>
+            </div>
+        </section>
+        <section class="form-container">
+            <header class="header">Insert Data</header>
+            <div>
+                <div class="input-container">
+                    <label for="bookTitle">Book Title</label>
+                    <input
+                        type="text"
+                        placeholder="Title of the book"
+                        name="bookTitle"
+                        id="bookTitle"
+                        value=""
+                    />
+                </div>
+                <div class="input-container">
+                    <label for="authorName">Author Name</label>
+                    <input
+                        type="text"
+                        placeholder="Author of the book"
+                        name="authorName"
+                        id="authorName"
+                        value=""
+                    />
+                </div>
+                <button class="btn insert-db-btn" onclick="insertIntoObjectStore()">
+                    Insert 
+                </button>
+            </div>
+        </section>
+        <section class="form-container">
+            <header class="header">Search By Title</header>
+            <div>
+                <div class="input-container">
+                    <label for="searchTitle">Book Title</label>
+                    <input
+                        type="text"
+                        placeholder="Title of the book"
+                        name="searchTitle"
+                        id="searchTitle"
+                        value=""
+                    />
+                </div>
+                <button class="btn search-db-btn" onclick="getBookByName()">
+                    Search 
+                </button>
+                <div>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <td>Id</td>
+                                <td>Title</td>
+                                <td>Author</td>
+                            </tr>
+                        </thead>
+                        <tbody id="searchByTitleTbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="form-container">
+            <header class="header">Search By Author</header>
+            <div>
+                <div class="input-container">
+                    <label for="searchTitle">Book Author</label>
+                    <input
+                        type="text"
+                        placeholder="Author of the book"
+                        name="searchAuthor"
+                        id="searchAuthor"
+                        value=""
+                    />
+                </div>
+                <button class="btn search-db-btn" onclick="getBooksByAuthor()">
+                    Search 
+                </button>
+                <div>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <td>Id</td>
+                                <td>Title</td>
+                                <td>Author</td>
+                            </tr>
+                        </thead>
+                        <tbody id="searchByAuthorTbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="form-container">
+            <header class="header">Get All Books</header>
+            <div>
+                <button class="btn all-db-btn" onclick="getAllBooks()">Get All Books</button>
+            </div>
+        </section>
+    </main>
+    <script src="./index.js"></script>
+</body>
+</html>
